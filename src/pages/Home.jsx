@@ -14,7 +14,24 @@ export default function Home() {
 
     return (
         <div className="container py-4">
-            <h1>Hola mundo</h1>
+            <h1 className="text-center mb-4">Página de Inicio</h1>
+
+            {/* Componente 1: Carrusel Principal */}
+            <Carusel slides={homeSlides} />
+
+            {/* Componente 2 e 3: Dos Tarjetas informativas */}
+            <div className="row my-4 g-4">
+                <div className="col-md-6">
+                    <Card title="Nuestra Misión" text="Llevar el desarrollo Frontend al siguiente nivel utilizando componentes limpios." img="https://picsum.photos/id/60/400/250" />
+                </div>
+                <div className="col-md-6">
+                    <Card title="Nuestra Visión" text="Crear interfaces escalables, rápidas y adaptables a cualquier dispositivo." img="https://picsum.photos/id/48/400/250" />
+                </div>
+            </div>
+
+            {/* Componente 4: Acordeón Preguntas Frecuentes */}
+            <h3 className="mt-5">Preguntas Frecuentes</h3>
+            <Acordion items={faqItems} />
         </div>
     );
 }
